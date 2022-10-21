@@ -20,6 +20,8 @@ class BuyController {
 
             let pc = ProductController;
             pc.addQtProduct(product, quantity);
+            pc.updatePrice(product, price);
+            
             return res.status(StatusCodes.CREATED).json(buy);
 
         } catch(error) {

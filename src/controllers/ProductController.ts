@@ -89,6 +89,12 @@ class ProductController {
         }
     }
 
+    async updatePrice(idProduct, price) {
+        let productRet = await (await ProductModel.findOne( { where: {idProduct: idProduct}} )).toJSON();
+            await ProductModel.update({  salePrice: price
+            }, { where: { idProduct: idProduct } });
+    }
+
     async addQtProduct(idProduct, quantity) {
         let productRet = await (await ProductModel.findOne( { where: {idProduct: idProduct}} )).toJSON();
             await ProductModel.update({  quantity: productRet.quantity + quantity
