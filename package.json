@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.12",
     "@types/node": "*",
     "@types/node-dir": "^0.0.34",
     "all": "^0.0.0",

@@ -12,6 +12,10 @@ app.use(async (req, res, next) => {
     next();
 });
 
+app.use(cors({
+    origin: ['*']
+}));
+
 app.use(router);
 
 app.get('/', (req, res) => {
