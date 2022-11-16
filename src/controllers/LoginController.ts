@@ -27,7 +27,7 @@ class LoginController {
                 secret, { expiresIn: '1d'},
             );
         
-        return res.status(StatusCodes.CREATED).json({msg: MessagesUtils.LOGIN_OK, token});
+        return res.status(StatusCodes.OK).json({msg: MessagesUtils.LOGIN_OK, token});
     }
 
 
