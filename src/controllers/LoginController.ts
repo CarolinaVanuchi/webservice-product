@@ -19,7 +19,7 @@ class LoginController {
         if (!userExist) return res.status(StatusCodes.NOT_ACCEPTABLE).json(MessagesUtils.EXISTS_USER_PASSWORD);                
      
         const checkPassword = await bcrypt.compare(pass, userExist['password'])
-        if (!checkPassword) return res.status(StatusCodes.NOT_FOUND).json(MessagesUtils.EXISTS_USER_PASSWORD);
+        if (!checkPassword) return res.status(StatusCodes.NOT_ACCEPTABLE).json(MessagesUtils.EXISTS_USER_PASSWORD);
         
         const secret = process.env.SERET;
         const token = jwt.sign(
